@@ -1,0 +1,44 @@
+.pagination-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: Min(500px, 60vw);
+  height: 3rem;
+  margin-bottom: $title-margin-bottom;
+
+  background-color: $light;
+}
+
+.pagination-buttons-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: Min(400px, 50vw);
+  .pagination-button-container {
+    button {
+      width: 2rem;
+      height: 2rem;
+      background-color: $light;
+      border: none;
+      color: $primary;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.4s;
+
+      &:hover {
+        background-color: $secondary;
+      }
+
+      &.active {
+        background-color: $primary;
+        color: $light;
+      }
+    }
+  }
+}
+
+.pagination-select {
+  width: 5rem;
+  height: 2rem;
+  text-align: center;
+}

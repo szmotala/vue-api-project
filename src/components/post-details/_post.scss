@@ -1,0 +1,101 @@
+.post-card {
+  width: 80vw;
+  box-sizing: border-box;
+  height: auto;
+  padding: $post-card-padding;
+  border: 1px solid $primary;
+  border-radius: 32px;
+  background-color: $card-color;
+
+  box-shadow: 0.3rem 0.3rem 0px $primary;
+  transition: all 0.7s;
+
+  &.ondelete {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+
+  @include lg {
+    width: Min(1000px, 60vw);
+  }
+
+  h3 {
+    font-size: 1.2rem;
+
+    font-weight: 700;
+    color: $primary;
+    margin-bottom: $title-margin-bottom;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $secondary;
+
+    @include md {
+      font-size: $font-subtitle;
+    }
+
+    @include lg {
+      font-size: $font-md;
+    }
+  }
+
+  .main-content {
+    margin-bottom: $post-card-margin-bottom;
+    text-align: justify;
+    .author {
+      font-weight: normal;
+      font-size: $font-sm;
+      font-style: italic;
+      color: $secondary;
+    }
+
+    .text-body {
+      font-size: $font-rg;
+      line-height: 1.8rem;
+      color: $primary;
+      margin-bottom: $post-card-title-bottom;
+      width: 70vw;
+      transition: all 0.5s;
+
+      @include lg {
+        width: Min(900px, 50vw);
+      }
+
+      &.elipsis {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+
+    .read-more {
+      font-size: $font-rg;
+      font-weight: 500;
+      color: $secondary;
+      cursor: pointer;
+      transition: all 0.5s;
+      display: inline-block;
+
+      &:hover {
+        color: $delete;
+        transform: scale(1.03);
+      }
+    }
+  }
+
+  .button-wrapper {
+    display: grid;
+    justify-content: right;
+    .button-content {
+      padding: 0.5rem 1.5rem;
+      width: max-content;
+      background-color: $delete;
+      color: $light;
+      border-radius: 24px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $delete-hover;
+      }
+    }
+  }
+}
