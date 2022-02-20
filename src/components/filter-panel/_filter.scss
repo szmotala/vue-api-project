@@ -1,0 +1,153 @@
+.filter-menu-btn {
+  position: absolute;
+  left: 5vw;
+  top: 0;
+
+  img {
+    height: 30px;
+  }
+
+  @include lg {
+    display: none;
+  }
+}
+
+.filter-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $delete-hover;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+
+  &.active {
+    transform: scaleX(1);
+  }
+
+  @include md {
+    width: 50vw;
+  }
+
+  @include lg {
+    transform: scaleX(1);
+    position: relative;
+    width: Min(400px, 40vw);
+    height: auto;
+    padding: $post-card-padding;
+
+    box-sizing: border-box;
+
+    border-radius: 32px;
+    box-shadow: 0.3rem 0.3rem 0px $primary;
+  }
+
+  .close-menu-btn {
+    position: absolute;
+    top: 5vw;
+    right: 2vw;
+    img {
+      display: block;
+      width: 40px;
+      height: 40px;
+    }
+
+    @include lg {
+      display: none;
+    }
+  }
+
+  .search-box {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    font-size: $font-sm;
+
+    @include lg {
+      width: 100%;
+      font-size: $font-rg;
+    }
+
+    img {
+      height: 60%;
+      flex: 1;
+      margin-right: $title-margin-bottom;
+    }
+
+    input {
+      height: 60%;
+      flex: 8;
+      color: $primary;
+      padding: 0.2rem 1rem;
+      border: 1px solid $secondary;
+      border-radius: 36px;
+      background-color: $light;
+    }
+  }
+
+  .filter-box {
+    height: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    font-size: $font-sm;
+
+    @include lg {
+      width: 100%;
+      font-size: $font-rg;
+    }
+
+    label {
+      margin-right: $title-margin-bottom;
+      color: $light;
+      font-weight: 500;
+    }
+
+    select {
+      height: 60%;
+      width: 80%;
+      color: $primary;
+      padding: 0 1rem;
+      border: 1px solid $secondary;
+      border-radius: 36px;
+      background-color: $light;
+    }
+  }
+}
+
+.reset-btn-box {
+  margin-top: $post-card-margin-bottom;
+
+  button {
+    padding: 0.5rem 4rem;
+    border-radius: 36px;
+    border: 1px solid $primary;
+    background-color: $light;
+
+    font-weight: 500;
+    color: $primary;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    font-size: $font-sm;
+
+    @include lg {
+      font-size: $font-rg;
+    }
+
+    &:hover {
+      background-color: $primary;
+      color: $light;
+    }
+  }
+}
